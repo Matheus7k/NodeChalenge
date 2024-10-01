@@ -2,7 +2,7 @@ import "reflect-metadata";
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import userRouter from "./routes/UserRoute"
-import { AppDataSource } from './config/typeorm';
+import { AppDataSource } from './config/TypeOrm';
 
 const app = new Koa();
 

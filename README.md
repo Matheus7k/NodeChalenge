@@ -13,7 +13,7 @@ Esta é uma aplicação backend desenvolvida em Node.js com TypeScript, utilizan
 
 ## Pré-requisitos
 
-Antes de começar, você precisará ter o Node.js e o Docker instalados em sua máquina.
+Antes de começar, você precisará ter o Node.js e o Docker instalados em sua máquina, além de uma instância do PostgreSQL rodando, seja localmente ou através do Docker.
 
 ## Instalação
 
@@ -27,18 +27,29 @@ Para rodar a aplicação localmente, siga os passos abaixo:
    cd <nome do repositório>
    ```
 
-2. Instale as depenências
+2. Configurar o PostgreSQL com Docker:
+    - Baixe a imagem do PostgreSQL 14:
+        ```bash
+        docker pull postgres:14
+        ```
+    - Inicie um container do PostgreSQL:
+        ```bash
+        docker run --name postgres-container -e POSTGRES_USER=<seu_usuario> -e POSTGRES_PASSWORD=<sua_senha> -e POSTGRES_DB=<seu_banco> -p 5432:5432 -d postgres:14
+        ```
+    Substitua `<seu_usuario>`, `<sua_senha>`, e `<seu_banco>` pelos valores desejados.
+
+3. Instale as depenências
     ```
     npm install
     ```
 
-3. Adicione as credenciais do Cognito no arquivo .env:
+4. Adicione as credenciais do Cognito no arquivo .env:
     ```bash
     COGNITO_USER_POOL_ID=<seu_user_pool_id>
     COGNITO_CLIENT_ID=<seu_client_id>
     ```
 
-4. Para iniciar a aplicação em modo de desenvolvimento, execute:
+5. Para iniciar a aplicação em modo de desenvolvimento, execute:
     ```
     npm run dev
     ```

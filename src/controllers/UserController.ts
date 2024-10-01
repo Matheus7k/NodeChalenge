@@ -35,7 +35,7 @@ export class UserController {
             ctx.body = { message: 'User created successfully!', user: result };
         } catch (error) {
             ctx.status = 400;
-            ctx.body = { message: 'Error creating user', error };
+            ctx.body = { message: 'Error creating user', error: (error as Error).message };
         }
     }
 }

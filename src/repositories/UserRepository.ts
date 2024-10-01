@@ -1,7 +1,8 @@
-import { AppDataSource } from "../config/typeorm"
+
 import { User } from '../entity/User';
 import { IUserRepository } from "../interfaces/IUserRepository";
 import { RoleType } from '../enums/RoleType';
+import { AppDataSource } from '../config/TypeOrm';
 
 export class UserRepository implements IUserRepository {
 

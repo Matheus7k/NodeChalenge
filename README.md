@@ -60,5 +60,5 @@ Se preferir executar a aplicação usando Docker, siga os passos abaixo:
     ```
 
 # Scripts
-    - npm run dev: Inicia a aplicação em modo de desenvolvimento.
-    - docker-compose up --build: Constrói e inicia a aplicação usando Docker.
+- npm run dev: Inicia a aplicação em modo de desenvolvimento.
+- docker-compose up --build: Constrói e inicia a aplicação usando Docker.
